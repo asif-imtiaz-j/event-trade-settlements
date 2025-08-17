@@ -1,0 +1,107 @@
+services:
+  - type: web
+    name: ingest-service
+    env: docker
+    plan: free
+    repo: https://github.com/asif-imtiaz-j/event-trade-settlements
+    branch: main
+    dockerfilePath: ingest-service/Dockerfile
+    healthCheckPath: /actuator/health
+    autoDeploy: true
+    envVars:
+      - key: KAFKA_BOOTSTRAP_SERVERS
+        value: "CHANGEME"      # e.g., permanent-xxx-xxx.upstash.io:9092
+      - key: KAFKA_SECURITY_PROTOCOL
+        value: "SASL_SSL"
+      - key: KAFKA_SASL_MECHANISM
+        value: "PLAIN"
+      - key: KAFKA_USERNAME
+        value: "CHANGEME"
+      - key: KAFKA_PASSWORD
+        value: "CHANGEME"
+      - key: APP_TOPICS_ORDERS
+        value: "orders"
+  - type: web
+    name: orders-service
+    env: docker
+    plan: free
+    repo: https://github.com/asif-imtiaz-j/event-trade-settlements
+    branch: main
+    dockerfilePath: orders-service/Dockerfile
+    healthCheckPath: /actuator/health
+    autoDeploy: true
+    envVars:
+      - key: KAFKA_BOOTSTRAP_SERVERS
+        value: "CHANGEME"
+      - key: KAFKA_SECURITY_PROTOCOL
+        value: "SASL_SSL"
+      - key: KAFKA_SASL_MECHANISM
+        value: "PLAIN"
+      - key: KAFKA_USERNAME
+        value: "CHANGEME"
+      - key: KAFKA_PASSWORD
+        value: "CHANGEME"
+      - key: APP_TOPICS_ORDERS
+        value: "orders"
+      - key: DATABASE_URL
+        value: "CHANGEME"      # e.g., jdbc:postgresql://host:5432/db
+      - key: DATABASE_USERNAME
+        value: "CHANGEME"
+      - key: DATABASE_PASSWORD
+        value: "CHANGEME"
+  - type: web
+    name: risk-service
+    env: docker
+    plan: free
+    repo: https://github.com/asif-imtiaz-j/event-trade-settlements
+    branch: main
+    dockerfilePath: risk-service/Dockerfile
+    healthCheckPath: /actuator/health
+    autoDeploy: true
+    envVars:
+      - key: KAFKA_BOOTSTRAP_SERVERS
+        value: "CHANGEME"
+      - key: KAFKA_SECURITY_PROTOCOL
+        value: "SASL_SSL"
+      - key: KAFKA_SASL_MECHANISM
+        value: "PLAIN"
+      - key: KAFKA_USERNAME
+        value: "CHANGEME"
+      - key: KAFKA_PASSWORD
+        value: "CHANGEME"
+      - key: APP_TOPICS_ORDERS
+        value: "orders"
+      - key: DATABASE_URL
+        value: "CHANGEME"
+      - key: DATABASE_USERNAME
+        value: "CHANGEME"
+      - key: DATABASE_PASSWORD
+        value: "CHANGEME"
+  - type: web
+    name: settlements-service
+    env: docker
+    plan: free
+    repo: https://github.com/asif-imtiaz-j/event-trade-settlements
+    branch: main
+    dockerfilePath: settlements-service/Dockerfile
+    healthCheckPath: /actuator/health
+    autoDeploy: true
+    envVars:
+      - key: KAFKA_BOOTSTRAP_SERVERS
+        value: "CHANGEME"
+      - key: KAFKA_SECURITY_PROTOCOL
+        value: "SASL_SSL"
+      - key: KAFKA_SASL_MECHANISM
+        value: "PLAIN"
+      - key: KAFKA_USERNAME
+        value: "CHANGEME"
+      - key: KAFKA_PASSWORD
+        value: "CHANGEME"
+      - key: APP_TOPICS_ORDERS
+        value: "orders"
+      - key: DATABASE_URL
+        value: "CHANGEME"
+      - key: DATABASE_USERNAME
+        value: "CHANGEME"
+      - key: DATABASE_PASSWORD
+        value: "CHANGEME"

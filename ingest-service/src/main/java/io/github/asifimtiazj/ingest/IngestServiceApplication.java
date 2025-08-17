@@ -1,4 +1,4 @@
-﻿package io.github.asifimtiazj.ingest;
+package io.github.asifimtiazj.ingest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

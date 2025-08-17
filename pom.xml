@@ -13,6 +13,10 @@
   <description>Parent aggregator for event-driven trade settlements (Java 17, Maven, Spring Boot)</description>
   <url>https://github.com/asif-imtiaz-j/event-trade-settlements</url>
 
+  <modules>
+    <module>common</module>
+  </modules>
+
   <properties>
     <java.version>17</java.version>
     <maven.compiler.release>17</maven.compiler.release>
@@ -26,7 +30,7 @@
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>\</version>
+        <version></version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -41,7 +45,7 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.11.0</version>
           <configuration>
-            <release>\</release>
+            <release></release>
           </configuration>
         </plugin>
         <plugin>
@@ -57,7 +61,7 @@
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
-          <version>\</version>
+          <version></version>
         </plugin>
       </plugins>
     </pluginManagement>

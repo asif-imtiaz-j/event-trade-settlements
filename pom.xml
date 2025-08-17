@@ -17,6 +17,7 @@
     <module>common</module>
     <module>ingest-service</module>
     <module>orders-service</module>
+    <module>risk-service</module>
   </modules>
 
   <properties>
